@@ -11,11 +11,11 @@ I frequently quip that in IT, one might find 1000 ways todo anything.  100 of th
 
 Thus I stopped trying to code a better path, as well learned a great lesson in the power of refocus thru process review without emotional attachment in streamlining a task.
 
-Using fpart (http://sourceforge.net/projects/fpart/) to sort, sem (https://www.gnu.org/software/parallel/sem.html) to queue the results, and rsync (https://rsync.samba.org) as the transport.  A versatile threaded rsync tool can be created in a single command line.  One that can spread jobs across multiple servers, or stack them deep on one.  Group and spread them deep on many with the intelligence to throttle jobs if impacting.  Jobs are monitored for slow downs and network hangs, killed if they run longer then normal.  Jobs are tracked for success, and requeued and reprocessed until all are marked with success.  Job monitoring provides clear status, with restartable master control processes that make the effort a constant movement forward.  
+Using fpart (http://sourceforge.net/projects/fpart/) to sort, sem (https://www.gnu.org/software/parallel/sem.html) to queue the results, and rsync (https://rsync.samba.org) as the transport.  A versatile threaded rsync tool can be created in a single command line.  One that can spread jobs across multiple servers, or stack them deep on one.  Group and spread them deep on many with the intelligence to throttle jobs if impacting.  Jobs are monitored for slow downs and network hangs, killed if they run longer then normal.  Each batch is tracked to the end, and requeued and reprocessed until all are marked with success.  Job monitoring provides clear status, with restartable master control processes that make the effort a constant movement forward.  
 
 fpart -L -f ${FILECNT} -x '.snapshot' -x '.zfs' -Z -o ${OUTPRE} -W 'sem -j ${JOBCNT} "rsync --files-from=${FPART_PARTFILENAME} ${RSYNCOPT} ${SOURCE} ${TARGET} > ${FPART_PARTFILENAME}.rsync.log 2>&1"' . 
 
-All that and more expressed quite simply.  Script prsync.sh is a simple filler for those variables if more example is needed.  And the other scripts are examples of variants I coded along the way.  
+All that and more expressed quite simply.  Script prsync.sh is a simple filler for those variables if more example is needed.  And the other scripts are examples of variants I coded along the way.
 
 Cheers
 James Hutchinson
