@@ -17,6 +17,6 @@ fpart -L -f ${FILECNT} -x '.snapshot' -x '.zfs' -Z -o ${OUTPRE} -W 'sem -j ${JOB
 
 All that and more expressed quite simply.  Script prsync.sh is a simple filler for those variables if more example is needed.  The other scripts are examples of variants I coded along the way.
 
-Cheers
+Cheers,
 James Hutchinson
 
